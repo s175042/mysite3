@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    background-color: ivory;
+    font-family: "游ゴシック",sans-serif;
+    font-size: 90%;
+    
+}
+h1 img{
+
+    width: 85%;
+    
+}
+.a{
+    text-align: left;
+    
+}
+div p{
+font-weight: 800;
+font-size: 150%;
+}
+select{
+    font-size: 150%;
+    
+}
+b{
+    font-size: 200%;
+}
+h4{
+    font-weight: normal;
+}
+.c{
+    font-size: 180%;
+}
+.e{
+    margin-top: 70px;
+}
+.f {
+    padding: 1rem 2rem;
+    color: #fff;
+    background: rgb(245, 140, 70);
+    -webkit-box-shadow: 5px 5px 0 rgb(231, 103, 18);
+    box-shadow: 5px 5px 0 rgb(238, 190, 145);
+  }

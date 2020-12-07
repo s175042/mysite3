@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>自由時間計算ツール</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+​
+<body>
+  <a name="header"><h1><img src="images/image8.png" alt=""></h1></a>
+  <h2>時間を無駄にしていませんか？</h2>
+  <p class="a">好きなことができる時間がどれくらいあるか一度は考えたことがあるでしょう。しかし実際に計算したことはあまり多くないと思います。この時間を知っておくことで、自分が時間を有効活用出来ているかを見つめ直すことが出来ます。</p>
+  <p class="a">このサイトでは、あなたが自由の好きなように使える時間を１日入力するだけで、週、月、年単位で調べることが出来ます。さらに、表示された時間を時給に換算する事で、あなた自身の時間の価値を知ることが出来ます。
+  </p>
+  <h3><p class="f">１日の自由時間を入力して下さい</p></h3>
+  <div id="app">
+    <select v-model="time"> 
+      <option disabled value="">選択してください</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+    <a>時間</a>
+    <div v-if="time >= 1">
+    <p>あなたの自由時間は…</p>
+      <p>週  <b>{{week}}</b>時間</p>
+      <p>月  <b>{{month}}</b>時間</p>
+      <p>年  <b>{{year.toLocaleString()}}</b>時間</p>
+  <h3>福岡の最低賃金842円で計算すると…</h3>
+      <p v-html="images"></p>
+  　  <p>1日  <b>{{price.toLocaleString()}}</b>円</p>
+  
+  <p class="e"></p>
+  <h2>この時間でできること</h2>
+  
+  
+  　　<h2>聴ける曲数</h2>
+  <img src="images/image6.png" alt="music">
+  <p>週　<b>{{Math.floor(music1).toLocaleString()}}</b>曲</p>
+  <p>月　<b>{{Math.floor(music2).toLocaleString()}}</b>曲</p>
+  <p>年　<b>{{Math.floor(music3).toLocaleString()}}</b>曲</p>
+ <h3>(1曲 約4分)</h3>
+  
+    <p class="e"></p>
+  <h2>読めるマンガ数</h2>
+  <img src="images/image3.png" alt="book">
+  <p>週　<b>{{Math.floor(manga1).toLocaleString()}}</b>冊</p>
+  <p>月　<b>{{Math.floor(manga2).toLocaleString()}}</b>冊</p>
+  <p>年　<b>{{Math.floor(manga3).toLocaleString()}}</b>冊</p>
+  <h3>(1冊 約20分)</h3>
+  
+  <p class="e"></p>
+  <h2>観れる映画の数</h2>
+  <img src="images/image7.png" alt="movie">
+  <p>週　<b>{{Math.floor(movie1).toLocaleString()}}</b>本</p>
+  <p>月　<b>{{Math.floor(movie2).toLocaleString()}}</b>本</p>
+  <p>年　<b>{{Math.floor(movie3).toLocaleString()}}</b>本</p>
+  <h3>(1本 約120分)</h3>
+  
+    <p class="e"></p>
+  <h2>観れるサッカーの試合数</h2>
+  <img src="images/image4.png" alt="soccer">
+  <p>週　<b>{{Math.floor(soccer1).toLocaleString()}}</b>試合</p>
+  <p>月　<b>{{Math.floor(soccer2).toLocaleString()}}</b>試合</p>
+  <p>年　<b>{{Math.floor(soccer3).toLocaleString()}}</b>試合</p>
+  <h3>（Jリーグの年間試合数は約1000試合）</h3>
+
+  <div v-if="month >= 50">
+    <p class="e"></p>
+  <h2>平日の睡眠時間を</h2>
+  <img src="images/image5.png" alt="sleep">
+  <p><b>{{Math.floor(sleep)}}</b>時間</p>
+  <p>延長できる</p>
+  </div>
+    <div id="page_top">
+  ​<p><a href ="index.html#header">もう一度入力する</a></p>
+   </div>
+</div> 
+    <script>
+      
+    new Vue({
+      el: '#app',
+      data: {
+        time: 0
+        },
+      computed: {
+        //timeが変わったら、各値を算出する
+        week: function(){
+          return this.time * 7;
+          },
+        month: function(){
+          return this.time * 31;
+          },
+        year: function(){
+          return this.time * 365;
+          },
+        price:function(){
+          return this.time * 842;
+        },
+        //priceが変わったら画像を表示
+        images: function(){
+          let satsutaba = "";
+					for (let i = 1000; i < this.price; i += 1000) {
+            satsutaba += "<img src = ./images/image1.png></img>";
+          }
+          return satsutaba;
+        },
+        music1: function(){
+          return this.week / 0.067;
+        },
+        music2: function(){
+          return this.month/ 0.067;
+        },
+        music3: function(){
+          return this.year / 0.067;
+        },
+        manga1: function(){
+          return this.week / 0.333;
+        },
+        manga2: function(){
+          return this.month / 0.333;
+        },
+        manga3: function(){
+          return this.year  / 0.333;
+        },
+        movie1: function(){
+          return this.week / 2;
+        },
+        movie2: function(){
+          return this.month / 2;
+        },
+        movie3: function(){
+          return this.year  / 2;
+        },
+        soccer1: function(){
+          return this.week / 1.5;
+        },
+        soccer2: function(){
+          return this.month / 1.5;
+        },
+        soccer3: function(){
+          return this.year / 1.5;
+        },
+        sleep: function(){
+          return this.month / 50;
+        }
+      }
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
