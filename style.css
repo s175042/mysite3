@@ -54,7 +54,7 @@ h4{
 }
 .h {
     
-    font-size: 130%;
+    font-size: 100%;
     padding: 1rem 2rem;
     border-top: 3px dotted rgb(245, 140, 70);
     border-bottom: 3px dotted rgb(245, 140, 70);
@@ -63,9 +63,6 @@ h4{
   }
 .i{
     
-    font-size: 100%;
-    padding: 1rem 2rem;
-    border-top: 3px dotted rgb(245, 140, 70);
-    border-bottom: 3px dotted rgb(245, 140, 70);
-    display: inline-block;
+    font-size: 130%;
+    
 }
