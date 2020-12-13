@@ -24,6 +24,7 @@ select{
 }
 b{
     font-size: 200%;
+    color: rgb(245, 140, 70);
 }
 h4{
     font-weight: normal;
@@ -40,4 +41,31 @@ h4{
     background: rgb(245, 140, 70);
     -webkit-box-shadow: 5px 5px 0 rgb(231, 103, 18);
     box-shadow: 5px 5px 0 rgb(238, 190, 145);
+    
   }
+.g {
+    padding: 1rem 2rem;
+    color: #fff;
+    background: rgb(245, 140, 70);
+    -webkit-box-shadow: 5px 5px 0 rgb(231, 103, 18);
+    box-shadow: 5px 5px 0 rgb(238, 190, 145);
+    font-size: 125%;
+   
+}
+.h {
+    
+    font-size: 130%;
+    padding: 1rem 2rem;
+    border-top: 3px dotted rgb(245, 140, 70);
+    border-bottom: 3px dotted rgb(245, 140, 70);
+    display: inline-block;
+    
+  }
+.i{
+    
+    font-size: 100%;
+    padding: 1rem 2rem;
+    border-top: 3px dotted rgb(245, 140, 70);
+    border-bottom: 3px dotted rgb(245, 140, 70);
+    display: inline-block;
+}
