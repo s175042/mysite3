@@ -31,19 +31,19 @@
     </select>
     <a>時間</a>
     <div v-if="time >= 1">
-    <p>あなたの自由時間は…</p>
+    <h2><p class="h">あなたの自由時間は…</p></h2>
       <p>週  <b>{{week}}</b>時間</p>
       <p>月  <b>{{month}}</b>時間</p>
       <p>年  <b>{{year.toLocaleString()}}</b>時間</p>
-  <h3>福岡の最低賃金842円で計算すると…</h3>
+  <h2><p class="i">福岡の最低賃金842円で計算すると…</p></h2>
       <p v-html="images"></p>
   　  <p>1日  <b>{{price.toLocaleString()}}</b>円</p>
   
   <p class="e"></p>
-  <h2>この時間でできること</h2>
+  <h3><p class="g">この時間で出来ること</p></h3>
   
   
-  　　<h2>聴ける曲数</h2>
+  　　<h2><p class="h">聴ける曲数</p></h2>
   <img src="images/image6.png" alt="music">
   <p>週　<b>{{Math.floor(music1).toLocaleString()}}</b>曲</p>
   <p>月　<b>{{Math.floor(music2).toLocaleString()}}</b>曲</p>
@@ -51,7 +51,7 @@
  <h3>(1曲 約4分)</h3>
   
     <p class="e"></p>
-  <h2>読めるマンガ数</h2>
+  <h2><p class="h">読めるマンガ数</p></h2>
   <img src="images/image3.png" alt="book">
   <p>週　<b>{{Math.floor(manga1).toLocaleString()}}</b>冊</p>
   <p>月　<b>{{Math.floor(manga2).toLocaleString()}}</b>冊</p>
@@ -59,7 +59,7 @@
   <h3>(1冊 約20分)</h3>
   
   <p class="e"></p>
-  <h2>観れる映画の数</h2>
+  <h2><p class="h">観れる映画の数</p></h2>
   <img src="images/image7.png" alt="movie">
   <p>週　<b>{{Math.floor(movie1).toLocaleString()}}</b>本</p>
   <p>月　<b>{{Math.floor(movie2).toLocaleString()}}</b>本</p>
@@ -67,7 +67,7 @@
   <h3>(1本 約120分)</h3>
   
     <p class="e"></p>
-  <h2>観れるサッカーの試合数</h2>
+  <h2><p class="h">観れるサッカーの試合数</p></h2>
   <img src="images/image4.png" alt="soccer">
   <p>週　<b>{{Math.floor(soccer1).toLocaleString()}}</b>試合</p>
   <p>月　<b>{{Math.floor(soccer2).toLocaleString()}}</b>試合</p>
@@ -76,7 +76,7 @@
 
   <div v-if="month >= 50">
     <p class="e"></p>
-  <h2>平日の睡眠時間</h2>
+  <h2><p class="h">平日の睡眠時間</p></h2>
   <img src="images/image5.png" alt="sleep">
   <p><b>{{Math.floor(sleep)}}</b>時間</p>
   <p>延長できる</p>
@@ -158,8 +158,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 
