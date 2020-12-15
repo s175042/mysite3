@@ -13,7 +13,7 @@ h1 img{
 .a{
     text-align: left;
     margin-top: 30px;
-    font-size: 110%;
+    font-size: 100%;
     
 }
 div p{
@@ -83,4 +83,10 @@ h4{
 a{
     color: rgb(245, 140, 70);
     text-decoration: none;
+    
+}
+.m{
+    text-align: left;
+    margin-top: 30px;
+    font-size: 110%;
 }
