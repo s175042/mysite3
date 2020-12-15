@@ -6,12 +6,13 @@
   <title>自由時間計算ツール</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.0/smooth-scroll.min.js"></script>
 </head>
 ​
 <body>
+  <div id="content1"></div>
   <a name="header"><h1><img src="images/image8.png" alt=""></h1></a>
-  
-  <p class="a">このサイトは、自分の好きなように使える時間を１日入力すると、週、月、年単位で計算することが出来ます。さらに、表示された時間を時給に換算し、時間の価値も算出することが出来ます。</p>
+  <h3><p class="a">このサイトは、1日あたりの自由に使える時間を入力すると、週、月、年単位で計算することが出来ます。さらに、表示された時間を時給に換算し、時間の価値も算出することが出来ます。</p></h3>
   <h3><p class="f">１日の自由時間を入力して下さい</p></h3>
   <div id="app">
     <select v-model="time"> 
@@ -107,14 +108,18 @@
   </div>
   <p class="e"></p>
   <h3><p class="j">時間を大切にしていますか？</p></h3>
-      <p class="a">表示された時間を見て、どう感じたかは人によって違うと思います。ですが、身体が元気なうちに好きな事が出来るのは、60歳ぐらいまでです。それに、中学生や高校生の時に比べて1年が短く感じるようになったでしょう。こう考えると実は好きなことができる時間は、そんなに多くないと感じませんか？
+      <p class="m">表示された時間を見て、どう感じたかは人によって違うと思います。ですが、身体が元気なうちに好きな事が出来るのは、60歳ぐらいまでです。それに、中学生や高校生の時に比べて1年が短く感じるようになったでしょう。こう考えると実は好きなことができる時間は、そんなに多くないと感じませんか？
         だからといって焦る必要は全くありません。そもそも自由時間とは自分の好きなように使う時間です。『何もしない』ことを一概に『無駄にした』とは言えないでしょう。一番やってはいけないことは、自分が後になって後悔するような時間を過ごすことです。このサイトが、あなたの時間の過ごし方を、見つめなおすきっかけになればと考えています。</p>
     <div id="page_top">
-  ​<p class="k"><a href ="index.html#header">もう一度入力する</a></p>
+  ​
+  <p class="k"><a data-scroll href="#content1">もう１回計算する</a></p>
    </div>
 </div> 
     <script>
-      
+      var scroll = new SmoothScroll('a[href*="#"]',{
+      speed: 300,
+      });
+
     new Vue({
       el: '#app',
       data: {
@@ -199,6 +204,7 @@
         English3: function(){
           return this.year / 0.833;
         }
+        
       }
     })
     </script>
