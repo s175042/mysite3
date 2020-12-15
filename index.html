@@ -16,18 +16,28 @@
   <div id="app">
     <select v-model="time"> 
       <option disabled value="">選択してください</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-      <option>9</option>
-      <option>10</option>
+      <option value="1">1時間</option>
+      <option value="1.5">1時間30分</option>
+      <option value="2">2時間</option>
+      <option value="2.5">2時間30分</option>
+      <option value="3">3時間</option>
+      <option value="3.5">3時間30分</option>
+      <option value="4">4時間</option>
+      <option value="4.5">4時間30分</option>
+      <option value="5">5時間</option>
+      <option value="5.5">5時間30分</option>
+      <option value="6">6時間</option>
+      <option value="6.5">6時間30分</option>
+      <option value="7">7時間</option>
+      <option value="7.5">7時間30分</option>
+      <option value="8">8時間</option>
+      <option value="8.5">8時間30分</option>
+      <option value="9">9時間</option>
+      <option value="9.5">9時間30分</option>
+      <option value="10">10時間</option>
+      <option value="10.5">10時間30分</option>
+
     </select>
-    <c>時間</c>
     <div v-if="time >= 1">
     <h2>あなたの自由時間は…</h2>
       <p>週  <b>{{week}}</b>時間</p>
