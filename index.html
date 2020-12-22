@@ -12,11 +12,13 @@
 <body>
   <div id="content1"></div>
   <a name="header"><h1><img src="images/image8.png" alt=""></h1></a>
-  <h3><p class="a">このサイトは、1日あたりの自由に使える時間を入力すると、週、月、年単位で計算することが出来ます。さらに、表示された時間を時給に換算し、時間の価値も算出することが出来ます。</p></h3>
-  <h3><p class="f">１日の自由時間を入力して下さい</p></h3>
+  <h3><p class="a">このサイトは、1日あたりの自由に使える時間を選択すると、週、月、年単位で計算することが出来ます。さらに、表示された時間を時給に換算し、時間の価値も算出することが出来ます。</p></h3>
+  <h3><p class="f">１日の自由時間を選択して下さい</p></h3>
   <div id="app">
     <select v-model="time"> 
       <option disabled value="">選択してください</option>
+      <option value="0">0分</option>
+      <option value="0.5">30分</option>
       <option value="1">1時間</option>
       <option value="1.5">1時間30分</option>
       <option value="2">2時間</option>
@@ -37,16 +39,16 @@
       <option value="9.5">9時間30分</option>
       <option value="10">10時間</option>
       <option value="10.5">10時間30分</option>
+      <option value="11">11時間</option>
+      <option value="11.5">11時間30分</option>
+      <option value="12">12時間</option>
 
     </select>
-    <div v-if="time >= 1">
+    <div v-if="time >= 0.5">
     <h2>あなたの自由時間は…</h2>
       <p>週  <b>{{week}}</b>時間</p>
       <p>月  <b>{{month}}</b>時間</p>
       <p>年  <b>{{year.toLocaleString()}}</b>時間</p>
-  <p class="i">福岡県の最低賃金842円で計算すると…</p>
-      <p v-html="images"></p>
-  　  <p>1日  <b>{{price.toLocaleString()}}</b>円</p>
   
   <p class="e"></p>
   <h3><p class="g">この時間で出来ること</p></h3>
@@ -107,6 +109,21 @@
   <p>延長できる</p>
   </div>
   <p class="e"></p>
+  <h3><p class="g">この時間で稼げる金額</p></h3>
+  <p class="e"></p>
+      <p v-html="images1"></p>
+  　  <p>1日  <b>{{price.toLocaleString()}}</b>円</p>
+  <p class="e"></p>
+     <p v-html="images2"></p>
+     <p>週　<b>{{Math.floor(money1).toLocaleString()}}</b>円</p>
+     <p class="e"></p>
+     <p v-html="images3"></p>
+     <p>月　<b>{{Math.floor(money2).toLocaleString()}}</b>円</p>
+     <p class="e"></p>
+     <p v-html="images4"></p>
+     <p>年　<b>{{Math.floor(money3).toLocaleString()}}</b>円</p>
+     <h3>（福岡県の最低賃金842円で、週4日働いたとする）</h3>
+  <p class="e"></p>
   <h3><p class="j">時間を大切にしていますか？</p></h3>
       <p class="m">表示された時間を見て、どう感じたかは人によって違うと思います。ですが、身体が元気なうちに好きな事が出来るのは、60歳ぐらいまでです。それに、中学生や高校生の時に比べて1年が短く感じるようになったでしょう。こう考えると実は好きなことができる時間は、そんなに多くないと感じませんか？
         だからといって焦る必要は全くありません。そもそも自由時間とは自分の好きなように使う時間です。『何もしない』ことを一概に『無駄にした』とは言えないでしょう。一番やってはいけないことは、自分が後になって後悔するような時間を過ごすことです。このサイトが、あなたの時間の過ごし方を、見つめなおすきっかけになればと考えています。</p>
@@ -137,12 +154,42 @@
           return this.time * 842;
         },
         //priceが変わったら画像を表示
-        images: function(){
+        images1: function(){
           let satsutaba = "";
 					for (let i = 1000; i < this.price; i += 1000) {
             satsutaba += "<img src = ./images/image1.png></img>";
           }
           return satsutaba;
+        },
+        images2: function(){
+          let satsutaba = "";
+					for (let i = 3000; i < this.money1; i += 1000) {
+            satsutaba += "<img src = ./images/image1.png></img>";
+          }
+          return satsutaba;
+        },
+        images3: function(){
+          let satsutaba = "";
+					for (let i = 10000; i < this.money2; i += 10000) {
+            satsutaba += "<img src = ./images/image11.png></img>";
+          }
+          return satsutaba;
+        },
+        images4: function(){
+          let satsutaba = "";
+					for (let i = 100000; i < this.money3; i += 100000) {
+            satsutaba += "<img src = ./images/image12.png></img>";
+          }
+          return satsutaba;
+        },
+        money1: function(){
+          return this.price * 4;
+        },
+        money2: function(){
+          return this.price * 16;
+        },
+        money3: function(){
+          return this.price * 192;
         },
         music1: function(){
           return this.week / 0.067;
