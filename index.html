@@ -12,8 +12,8 @@
 <body>
   <div id="content1"></div>
   <a name="header"><h1><img src="images/image8.png" alt=""></h1></a>
-  <h3><p class="a">このサイトは、1日あたりの自由に使える時間を選択すると、週、月、年単位で計算することが出来ます。さらに、表示された時間を時給に換算し、時間の価値も算出することが出来ます。</p></h3>
-  <h3><p class="f">１日の自由時間を選択して下さい</p></h3>
+  <h3><p class="a">このサイトは、平日1日あたりの自由に使える時間を選択すると、週、月、年単位で計算することが出来ます。さらに、表示された時間を時給に換算し、時間の価値も算出することが出来ます。</p></h3>
+  <h3><p class="f">平日１日の自由時間を選択して下さい</p></h3>
   <div id="app">
     <select v-model="time"> 
       <option disabled value="">選択してください</option>
@@ -44,12 +44,14 @@
       <option value="12">12時間</option>
 
     </select>
+    
     <div v-if="time >= 0.5">
+      
     <h2>あなたの自由時間は…</h2>
       <p>週  <b>{{week}}</b>時間</p>
       <p>月  <b>{{month}}</b>時間</p>
       <p>年  <b>{{year.toLocaleString()}}</b>時間</p>
-  
+      
   <p class="e"></p>
   <h3><p class="g">この時間で出来ること</p></h3>
   
@@ -107,6 +109,7 @@
   <img src="images/image5.png" alt="sleep">
   <p><b>{{Math.floor(sleep)}}</b>時間</p>
   <p>延長できる</p>
+  <h3>(1日2時間の自由時間で1時間延長できる)</h3>
   </div>
   <p class="e"></p>
   <h3><p class="g">この時間で稼げる金額</p></h3>
@@ -163,7 +166,7 @@
         },
         images2: function(){
           let satsutaba = "";
-					for (let i = 3000; i < this.money1; i += 1000) {
+					for (let i = 1000; i < this.money1; i += 1000) {
             satsutaba += "<img src = ./images/image1.png></img>";
           }
           return satsutaba;
