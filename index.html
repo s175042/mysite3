@@ -103,6 +103,22 @@
   <p>年　<b>{{Math.floor(English3).toLocaleString()}}</b>回</p>
   <h3>（1回 約50分）</h3>
 
+<p class="e"></p>
+  <h2><p class="h">外国語をマスターするまで</p></h2>
+  <img src="images/image14.png" alt="language">
+  <p>韓国語　<b>{{Math.floor(language1).toLocaleString()}}</b>日</p>
+  <p>中国語　<b>{{Math.floor(language2).toLocaleString()}}</b>日</p>
+  <p>英語　<b>{{Math.floor(language3).toLocaleString()}}</b>日</p>
+  <p>かかる</p>
+  <h3>（韓国語1000時間 中国語1500時間 英語3000時間）</h3>
+
+  <p class="e"></p>
+  <h2><p class="h">簿記2級に合格するまで</p></h2>
+  <img src="images/image13.png" alt="boki">
+  <p><b>{{Math.floor(boki).toLocaleString()}}</b>日</p>
+  <p>かかる</p>
+  <h3>（3級+2級 350~500時間）</h3>
+
   <div v-if="month >= 50">
     <p class="e"></p>
   <h2><p class="h">平日の睡眠時間</p></h2>
@@ -250,6 +266,18 @@
         },
         English3: function(){
           return this.year / 0.833;
+        },
+        boki: function(){
+          return 425 / this.time;
+        },
+        language1: function(){
+          return 1000 / this.time;
+        },
+        language2: function(){
+          return 1500 / this.time;
+        },
+        language3: function(){
+          return 3000 / this.time;
         }
         
       }
