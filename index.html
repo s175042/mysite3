@@ -48,9 +48,9 @@
     <div v-if="time >= 0.5">
       
     <h2>あなたの自由時間は…</h2>
-      <p>週  <b>{{week}}</b>時間</p>
-      <p>月  <b>{{month}}</b>時間</p>
-      <p>年  <b>{{year.toLocaleString()}}</b>時間</p>
+      <p>週　<b>{{week}}</b>時間</p>
+      <p>月　<b>{{month}}</b>時間</p>
+      <p>年　<b>{{year.toLocaleString()}}</b>時間</p>
       
   <p class="e"></p>
   <h3><p class="g">この時間で出来ること</p></h3>
@@ -61,7 +61,7 @@
   <p>週　<b>{{Math.floor(music1).toLocaleString()}}</b>曲</p>
   <p>月　<b>{{Math.floor(music2).toLocaleString()}}</b>曲</p>
   <p>年　<b>{{Math.floor(music3).toLocaleString()}}</b>曲</p>
- <h3>(1曲 約4分)</h3>
+ <h3>(1曲 4分で計算)</h3>
   
     <p class="e"></p>
   <h2><p class="h">読めるマンガの冊数</p></h2>
@@ -69,7 +69,7 @@
   <p>週　<b>{{Math.floor(manga1).toLocaleString()}}</b>冊</p>
   <p>月　<b>{{Math.floor(manga2).toLocaleString()}}</b>冊</p>
   <p>年　<b>{{Math.floor(manga3).toLocaleString()}}</b>冊</p>
-  <h3>(1冊 約20分)</h3>
+  <h3>(1冊 20分で計算)</h3>
 
   <p class="e"></p>
   <h2><p class="h">観れるアニメの話数</p></h2>
@@ -77,7 +77,7 @@
   <p>週　<b>{{Math.floor(anime1).toLocaleString()}}</b>話</p>
   <p>月　<b>{{Math.floor(anime2).toLocaleString()}}</b>話</p>
   <p>年　<b>{{Math.floor(anime3).toLocaleString()}}</b>話</p>
-  <h3>（1話 約30分）</h3>
+  <h3>（1話 30分で計算）</h3>
 
   <p class="e"></p>
   <h2><p class="h">観れる映画の本数</p></h2>
@@ -85,7 +85,7 @@
   <p>週　<b>{{Math.floor(movie1).toLocaleString()}}</b>本</p>
   <p>月　<b>{{Math.floor(movie2).toLocaleString()}}</b>本</p>
   <p>年　<b>{{Math.floor(movie3).toLocaleString()}}</b>本</p>
-  <h3>(1本 約120分)</h3>
+  <h3>(1本 120分で計算)</h3>
   
     <p class="e"></p>
   <h2><p class="h">観れるサッカーの試合数</p></h2>
@@ -101,7 +101,7 @@
   <p>週　<b>{{Math.floor(English1).toLocaleString()}}</b>回</p>
   <p>月　<b>{{Math.floor(English2).toLocaleString()}}</b>回</p>
   <p>年　<b>{{Math.floor(English3).toLocaleString()}}</b>回</p>
-  <h3>（1回 約50分）</h3>
+  <h3>（1回 50分で計算）</h3>
 
 <p class="e"></p>
   <h2><p class="h">外国語で会話が出来るまで</p></h2>
@@ -115,7 +115,7 @@
   <p class="e"></p>
   <h2><p class="h">簿記2級に合格するまで</p></h2>
   <img src="images/image13.png" alt="boki">
-  <p><b>{{Math.floor(boki).toLocaleString()}}</b>日</p>
+  <p><b>{{Math.floor(boki1).toLocaleString()}}</b>〜<b>{{Math.floor(boki2).toLocaleString()}}</b>日</p>
   <p>かかる</p>
   <h3>（目安 350~500時間）</h3>
 
@@ -267,8 +267,11 @@
         English3: function(){
           return this.year / 0.833;
         },
-        boki: function(){
-          return 425 / this.time;
+        boki1: function(){
+          return 350 / this.time;
+        },
+        boki2: function(){
+          return 500 / this.time;
         },
         language1: function(){
           return 1000 / this.time;
